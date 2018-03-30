@@ -1,7 +1,7 @@
 import React                                    from 'react';
 import { Image, Modal, TouchableOpacity, View } from 'react-native';
 import styles                                   from './styles';
-import I18n from '../../locales';
+import I18n from '../../i18n';
 
 import Search from '../Search';
 

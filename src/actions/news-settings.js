@@ -86,14 +86,17 @@ export function clearAllFilters() {
 
 async function setFilter(settings, dispatch) {
   dispatch(fetchNewsOnRequest());
-  try {
-    const response = await searchByTopHeadlines(settings);
-    const news = await response.json();
-    if (news.status === 'error') {
-      return dispatch(fetchNewsOnError(error));
-    }
-    dispatch(fetchNewsOnSuccess(news.articles));
-  } catch (error) {
-    dispatch(fetchNewsOnError(error));
-  }
+  searchByTopHeadlines(settings)
+    .then(json => {
+      return json.json();
+    })
+    .then(news => {
+      if (news.status === 'error') {
+        return dispatch(fetchNewsOnError(error));
+      }
+      dispatch(fetchNewsOnSuccess(news.articles));
+    })
+    .catch(error => {
+      dispatch(fetchNewsOnError(error));
+    })
 }

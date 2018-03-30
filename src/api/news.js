@@ -1,4 +1,5 @@
 import urlBuilder                            from 'lil-uri';
+import { cachedFetch, NoCacheForRequestError } from 'react-native-advanced-fetch';
 import { API_KEY, HOSTNAME, PATH, PROTOCOL } from '../constants/api';
 
 const settings = {
@@ -22,5 +23,5 @@ export const searchByTopHeadlines = (params) => {
     .query(query)
     .build();
 
-  return fetch(encodeURI(url), settings)
+  return cachedFetch(encodeURI(url), settings)
 };

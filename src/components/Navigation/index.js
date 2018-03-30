@@ -3,13 +3,13 @@ import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import styles                     from './styles';
 
 import { NAVIGATION_ITEMS } from '../../constants/view-list';
-import I18n from '../../locales';
+import I18n from '../../i18n';
 
 const LOCALED_NAVIGATION_ITEMS = I18n.t('navigation-items');
 
 export default class Navigation extends PureComponent {
   componentWillMount() {
-    this.props.onCategoryChange(NAVIGATION_ITEMS[0]);
+    this.props.onCategoryChange(this.props.category);
   }
 
   render() {

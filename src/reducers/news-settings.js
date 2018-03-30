@@ -6,9 +6,14 @@ const DEFAULT_STATE = {
   country: {}
 };
 
+let previouseState = DEFAULT_STATE;
+
 export default function settings(state = DEFAULT_STATE, action) {
   switch (action.type) {
     case SET_CATEGORY:
+      previouseState = {
+        ...state
+      };
       return {
         ...state,
         category: action.category,
@@ -17,6 +22,9 @@ export default function settings(state = DEFAULT_STATE, action) {
       };
 
     case SET_COUNTRY:
+      previouseState = {
+        ...state
+      };
       return {
         ...state,
         country: action.country,
@@ -25,6 +33,9 @@ export default function settings(state = DEFAULT_STATE, action) {
       };
 
     case SET_QUERY:
+      previouseState = {
+        ...state
+      };
       return {
         ...state,
         query: action.query,
@@ -33,10 +44,7 @@ export default function settings(state = DEFAULT_STATE, action) {
 
     case CLEAR_FILTERS:
       return {
-        ...state,
-        country: DEFAULT_STATE.country,
-        category: DEFAULT_STATE.category,
-        clearFilter: true
+        ...previouseState
       };
 
     default:

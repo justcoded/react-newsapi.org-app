@@ -1,7 +1,7 @@
 import React                                            from 'react';
 import { Image, Linking, Text, TouchableOpacity, View } from 'react-native';
 import styles                                           from './styles';
-import I18n from '../../locales';
+import I18n from '../../i18n';
 
 import moment from 'moment';
 
