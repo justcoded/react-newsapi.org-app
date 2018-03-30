@@ -2,15 +2,15 @@ export default {
   'footer-menu': '© COPYRIGHT JUSTCODED 2018',
   'country-search-placeholder': 'The News Source',
   'query-search-placeholder': 'Start Typing',
-  'navigation-items': [
-    "general",
-    "business",
-    "entertainment",
-    "health",
-    "science",
-    "sports",
-    "technology"
-  ],
+  'navigation-items': {
+    "general": "GENERAL",
+    "business": "BUSINESS",
+    "entertainment": "ENTERTAINMENT",
+    "health": "HEALTH",
+    "science": "SCIENCE",
+    "sports": "SPORTS",
+    "technology": "TECHNOLOGY"
+  },
   'news-read-more-button': 'Read',
   'error-screen': {
     'header': 'Uh-Oh!',

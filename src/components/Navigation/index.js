@@ -18,12 +18,12 @@ export default class Navigation extends PureComponent {
       <View style={styles.header}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.layout}>
           {
-            LOCALED_NAVIGATION_ITEMS.map((item, index) => (
+            NAVIGATION_ITEMS.map((item, index) => (
               <TouchableOpacity
                 key={index}
-                onPress={onCategoryChange.bind(null, NAVIGATION_ITEMS[index])}>
-                <Text style={[styles.item, NAVIGATION_ITEMS[index] === category && styles.active]}>
-                  {item.toUpperCase()}
+                onPress={onCategoryChange.bind(null, item)}>
+                <Text style={[styles.item, item === category && styles.active]}>
+                  {LOCALED_NAVIGATION_ITEMS[item]}
                 </Text>
               </TouchableOpacity>
               )
