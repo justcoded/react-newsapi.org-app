@@ -14,6 +14,7 @@ export default function articles(state = {}, action) {
         ...state,
         error: false,
         articles: action.articles,
+        isCached: action.isCached,
         isLoading: action.isLoading
       };
 

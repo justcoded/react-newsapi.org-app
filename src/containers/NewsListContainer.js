@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     clearFilter: state.settings.clearFilter,
     error: state.articles.error,
     articles: state.articles.articles,
+    isCached: state.articles.isCached,
     isLoading: state.articles.isLoading
   };
 };

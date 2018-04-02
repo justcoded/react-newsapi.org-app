@@ -20,7 +20,7 @@ const Header = ({category, country, isSideBarOpen, onCategoryChange, toggleSideM
       <TouchableOpacity
         style={styles.imageWrapper}
         onPress={toggleModal}>
-        <Image source={require('../../assets/Search.png')}/>
+        <Image style={styles.image} source={require('../../assets/Search.png')}/>
       </TouchableOpacity>
     </View>,
     <Navigation

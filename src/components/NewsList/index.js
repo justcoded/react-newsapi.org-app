@@ -1,23 +1,25 @@
 import React, { Component }                                                 from 'react';
 import { ActivityIndicator, FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import styles, { ACTIVITY_INDICATOR_COLOR, ACTIVITY_SIZE }                  from './styles';
+import I18n from '../../i18n';
 
 import News from '../News';
 
 export default class NewsList extends Component {
   componentWillReceiveProps(nextProps) {
-    if (nextProps.error) {
-      nextProps.onErrorHappens();
-    } else if (!nextProps.articles.length) {
+    if (!nextProps.articles.length) {
       nextProps.clearAllFilters();
     }
   }
 
   render() {
-    const {articles, isLoading, query, removeQueryFilter, clearFilter} = this.props;
+    const {articles, isLoading, query, removeQueryFilter, clearFilter, isCached} = this.props;
     if (!isLoading) {
       return (
         <View style={styles.flatList}>
+          <View style={styles.cachedWrapper}>
+            <Text>{isCached ? I18n.t('cached-results') : null}</Text>
+          </View>
           <FlatList
             key='news-list'
             keyExtractor={(item, index) => index.toString()}

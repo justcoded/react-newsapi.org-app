@@ -16,5 +16,6 @@ export default {
     'header': 'Uh-Oh!',
     'bad-internet-connection': 'Slow or no internet connection.',
     'action-internet-connection': 'Please check your internet settings and try again.'
-  }
+  },
+  'cached-results': 'Note, this is cached results'
 };

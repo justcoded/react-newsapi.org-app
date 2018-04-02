@@ -7,7 +7,7 @@ export default StyleSheet.create({
     height: window.height,
     backgroundColor: '#fff',
     paddingTop: 20,
-    paddingBottom: 20,
+    paddingBottom: 50
   },
   item: {
     marginLeft: 20,

@@ -10,10 +10,11 @@ function fetchNewsOnRequest() {
   }
 }
 
-function fetchNewsOnSuccess(articles) {
+function fetchNewsOnSuccess(articles, isCached) {
   return {
     type: REQUEST_SUCCESS,
     articles,
+    isCached,
     isLoading: false
   }
 }
@@ -86,15 +87,19 @@ export function clearAllFilters() {
 
 async function setFilter(settings, dispatch) {
   dispatch(fetchNewsOnRequest());
+  let isCached = false;
   searchByTopHeadlines(settings)
     .then(json => {
+      if (json.cached) {
+        isCached = true;
+      }
       return json.json();
     })
     .then(news => {
       if (news.status === 'error') {
         return dispatch(fetchNewsOnError(error));
       }
-      dispatch(fetchNewsOnSuccess(news.articles));
+      dispatch(fetchNewsOnSuccess(news.articles, isCached));
     })
     .catch(error => {
       dispatch(fetchNewsOnError(error));

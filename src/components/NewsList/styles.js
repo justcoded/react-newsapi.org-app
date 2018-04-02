@@ -39,5 +39,9 @@ export default StyleSheet.create({
     marginBottom: -20,
     fontSize: 14,
     fontWeight: '800',
+  },
+  cachedWrapper: {
+    padding: 15,
+    paddingBottom: -15
   }
 });
