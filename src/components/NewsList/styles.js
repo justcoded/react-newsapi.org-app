@@ -41,7 +41,6 @@ export default StyleSheet.create({
     fontWeight: '800',
   },
   cachedWrapper: {
-    padding: 15,
-    paddingBottom: -15
+    padding: 15
   }
 });

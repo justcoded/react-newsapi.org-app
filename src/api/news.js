@@ -1,5 +1,5 @@
 import urlBuilder                            from 'lil-uri';
-import { cachedFetch, NoCacheForRequestError } from 'react-native-advanced-fetch';
+import { cachedFetch } from 'react-native-advanced-fetch';
 import { API_KEY, HOSTNAME, PATH, PROTOCOL } from '../constants/api';
 
 const settings = {

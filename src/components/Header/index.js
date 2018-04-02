@@ -1,11 +1,13 @@
 import React                             from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
+import StatusBar                         from '../StatusBar';
 import styles                            from './styles';
 
 import Navigation from '../Navigation';
 
 const Header = ({category, country, isSideBarOpen, onCategoryChange, toggleSideMenu, toggleModal}) => {
   return [
+    <StatusBar key='status-bar' />,
     <View style={styles.header} key='top-menu'>
       <TouchableOpacity
         style={styles.imageWrapper}
