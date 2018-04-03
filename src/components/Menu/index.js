@@ -41,24 +41,26 @@ export default class Menu extends PureComponent {
           onChange={this.filterCountries.bind(this)}
           onSearchPress={this.filterCountries.bind(this)}/>
       </View>,
-      <ScrollView style={styles.menu} key='side-bar'>
-        {
-          this.state.countries.map(item => (
-              <TouchableOpacity
-                key={item.code}
-                onPress={this.onCountryChoose.bind(this, item)}
-                style={[styles.listWrapper, item.name === country.name && styles.activeItem]}>
-                <Image
-                  style={styles.image}
-                  source={item.img}/>
-                <Text
-                  style={styles.item}>
-                  {item.name}
-                </Text>
-              </TouchableOpacity>
+      <ScrollView key='side-bar'>
+        <View style={styles.menu}>
+          {
+            this.state.countries.map(item => (
+                <TouchableOpacity
+                  key={item.code}
+                  onPress={this.onCountryChoose.bind(this, item)}
+                  style={[styles.listWrapper, item.name === country.name && styles.activeItem]}>
+                  <Image
+                    style={styles.image}
+                    source={item.img}/>
+                  <Text
+                    style={styles.item}>
+                    {item.name}
+                  </Text>
+                </TouchableOpacity>
+              )
             )
-          )
-        }
+          }
+        </View>
       </ScrollView>
     ])
   }

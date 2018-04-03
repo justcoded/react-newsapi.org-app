@@ -1,6 +1,8 @@
 import { REQUEST_ERROR, REQUEST_START, REQUEST_SUCCESS } from '../constants/request';
 
-export default function articles(state = {}, action) {
+export default function articles(state = {
+  articles: []
+}, action) {
   switch (action.type) {
     case REQUEST_START:
       return {

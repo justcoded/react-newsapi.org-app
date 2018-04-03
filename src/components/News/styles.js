@@ -21,20 +21,22 @@ export default StyleSheet.create({
   },
   image: {
     width: '100%',
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
     borderRadius: 10,
     height: 130
   },
   noImage: {
     width: 76,
     height: 76,
+    borderRadius: 10,
     margin: 'auto'
   },
   noImageWrapper: {
     backgroundColor: '#d8d8d8',
     height: 130,
     display: 'flex',
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
   },

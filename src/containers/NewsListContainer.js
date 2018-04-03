@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
     category: state.settings.category,
     query: state.settings.query,
     clearFilter: state.settings.clearFilter,
+    oldQuery: state.settings.oldQuery,
     error: state.articles.error,
     articles: state.articles.articles,
     isCached: state.articles.isCached,

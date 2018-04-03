@@ -34,7 +34,9 @@ export default function settings(state = DEFAULT_STATE, action) {
 
     case CLEAR_FILTERS:
       return {
-        ...DEFAULT_STATE
+        ...DEFAULT_STATE,
+        clearFilter: true,
+        oldQuery: state.query
       };
 
     default:
