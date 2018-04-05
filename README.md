@@ -1,4 +1,4 @@
-# World News
+# JustNews
 
 This app uses [newsapi](https://newsapi.org/) like API.
 Start via [react-native-cli](https://github.com/facebook/react-native)
